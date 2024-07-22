@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MenuItem } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { DialogService } from 'primeng/dynamicdialog';
 import { MenuModule } from 'primeng/menu';
 import { ToolbarModule } from 'primeng/toolbar';
+import { ToastService } from './../services/toast.service';
 import { AvatarComponent } from './avatar/avatar.component';
 import { CategoryComponent } from './category/category.component';
 
@@ -28,10 +29,13 @@ export class NavbarComponent implements OnInit {
   guests: string = 'Adicionar convidados';
   dates: string = 'Qualquer semana';
 
+  private ToastService = inject(ToastService);
+
   currentMenuItems: MenuItem[] | undefined = [];
 
   ngOnInit(): void {
     this.fetchMenu();
+    this.ToastService.send({ severity: 'info', summary: 'Bem vindo!'});
   }
 
   private fetchMenu() {
