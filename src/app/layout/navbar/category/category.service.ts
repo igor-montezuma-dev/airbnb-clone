@@ -24,7 +24,7 @@ export class CategoryService {
     },
     {
       icon: 'exclamation',
-      displayName: 'OMG!',
+      displayName: 'UAU!',
       technicalName: 'OMG',
       activated: false,
     },
