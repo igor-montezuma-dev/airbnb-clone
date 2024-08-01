@@ -8,9 +8,9 @@ import {
   WritableSignal,
 } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from '../../environments/environment.development';
-import { State } from './model/state.model';
-import { User } from './model/user.model';
+import { environment } from '../../../environments/environment.development';
+import { State } from '../model/state.model';
+import { User } from '../model/user.model';
 
 @Injectable({
   providedIn: 'root',
